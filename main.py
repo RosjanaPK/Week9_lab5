@@ -41,10 +41,11 @@ async def process_image(image_request: ImageRequest):
     edges = apply_canny(image)
     processed_image = encode_image(edges)
 
-    return {"name": image_request.name,
-            "surname": image_request.surname,
-            "numbers": image_request.numbers,
-            "processed_image": processed_image}
+    # return {"name": image_request.name,
+    #         "surname": image_request.surname,
+    #         "numbers": image_request.numbers,
+    #         "processed_image": processed_image}
+    return "helow"
 
 
 
