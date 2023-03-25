@@ -1,11 +1,14 @@
 import requests
-import requests
+import uvicorn
 import base64
+from fastapi import FastAPI
+from pydantic import BaseModel
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 import json
 
+app = FastAPI()
 
 # encode image as base64 string
 def encode_image(image):
@@ -21,7 +24,7 @@ def decode_image(image_string):
 
 
 image_file = 'building.jpg'
-url        = "http://localhost:8088"
+url        = "http://localhost:8000"
 
 
 # Load the image
@@ -35,11 +38,11 @@ payload = {
     "surname": "Doe",
     "numbers": [1, 2, 3, 4, 5]
 }
-
+# response = requests.post(f"{url}/process-image")
 response = requests.post(f"{url}/process-image", json=payload)
+
 data = json.loads(response.content)
+# print(data)
 
 processed_image_string = data["processed_image"]
 processed_image        = decode_image(processed_image_string)
-
-

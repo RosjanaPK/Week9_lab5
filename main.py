@@ -4,6 +4,8 @@ from pydantic import BaseModel
 import numpy as np
 import cv2
 import base64
+from typing import List
+
 
 
 app = FastAPI()
@@ -32,12 +34,13 @@ def apply_canny(image):
     return edges
 
 
-@app.post("/process-image")
+@app.post("/process-image", status_code=200)
 async def process_image(image_request: ImageRequest):
+    # return {"Heep"}
     image = decode_image(image_request.image)
     edges = apply_canny(image)
     processed_image = encode_image(edges)
-
+    # return{"geee": processed_image}
     return {"name": image_request.name,
             "surname": image_request.surname,
             "numbers": image_request.numbers,
