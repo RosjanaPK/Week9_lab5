@@ -14,7 +14,7 @@ class ImageRequest(BaseModel):
     image: str
     name: str
     surname: str
-    numbers: list[int]
+    numbers: List[int]
 
 
 # encode image as base64 string
@@ -34,7 +34,7 @@ def apply_canny(image):
     return edges
 
 
-@app.post("/process-image", status_code=200)
+@app.post("/process-image")
 async def process_image(image_request: ImageRequest):
     # return {"Heep"}
     image = decode_image(image_request.image)
