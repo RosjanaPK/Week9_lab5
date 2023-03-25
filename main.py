@@ -1,12 +1,9 @@
-
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
 import cv2
 import base64
-from typing import List
-
 
 
 app = FastAPI()
@@ -15,7 +12,7 @@ class ImageRequest(BaseModel):
     image: str
     name: str
     surname: str
-    numbers: List[int]
+    numbers: list[int]
 
 
 # encode image as base64 string
@@ -45,11 +42,3 @@ async def process_image(image_request: ImageRequest):
             "surname": image_request.surname,
             "numbers": image_request.numbers,
             "processed_image": processed_image}
-    # return "helow"
-
-
-
-
-
-
-
