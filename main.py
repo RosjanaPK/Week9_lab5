@@ -13,8 +13,8 @@ from typing import List
 app = FastAPI()
 origins = [
     "http://localhost:8000",
-    "http://localhost:8001",
-    "https://stackpython.co"
+    #"http://localhost:8001"
+   
 ]
 
 app.add_middleware(
@@ -50,17 +50,6 @@ def apply_canny(image):
 
 
 @app.post("/process-image")
-async def process_image(image_request: ImageRequest):
-    # return {"Heep"}
-    image = decode_image(image_request.image)
-    edges = apply_canny(image)
-    processed_image = encode_image(edges)
-    # return{"geee": processed_image}
-    return {"name": image_request.name,
-            "surname": image_request.surname,
-            "numbers": image_request.numbers,
-            "processed_image": processed_image}
-@app.get("/")
 async def process_image(image_request: ImageRequest):
     # return {"Heep"}
     image = decode_image(image_request.image)

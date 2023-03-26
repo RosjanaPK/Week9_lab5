@@ -18,7 +18,7 @@
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
-            width: 40%;
+            width: 80%;
             border-radius: 5px;
         }
 
@@ -30,31 +30,38 @@
             border-radius: 5px 5px 0 0;
         }
 
-        .container {
-            padding: 2px 16px;
-        }
+    
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>Me & Friend</h2>
-        <div class="row">
-            <div class="col-6">
+        <h2 class="mt-5">My Picture</h2>
+        <div class="row mt-5">
+            <div class="col">
                 <div class="card ">
                     <img src={{mycontent}} alt="Red dot" style="width:100%; height: 50%;">
                     <div class="container">
                         <h4><b>{{name.name}}</b></h4>
-                        <p>Interior Designer</p>
+                        <p>Me & Friend</p>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col">
                 <div class="card">
-                    <img src={{mycontent}} alt="Red dot" style="width:100%; height: 50%;">
+                    <img src={{mycontent2}} alt="Red dot" style="width:100%; height: 50%;">
                     <div class="container">
-                        <h4><b>{{name.name}}</b></h4>
-                        <p>Interior Designer</p>
+                        <h4><b>Kai</b></h4>
+                        <p>My idol</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src={{mycontent3}} alt="Red dot" style="width:100%; height: 50%;">
+                    <div class="container">
+                        <h4><b>Mamon</b></h4>
+                        <p>Cat lover</p>
                     </div>
                 </div>
             </div>
